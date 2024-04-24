@@ -1,14 +1,46 @@
 ﻿@page "/"
+@using Models
 
 <PageTitle>Game Cataog</PageTitle>
 
 <table>
     <thead>
-        <th>Id:</th>
+        <th>Id</th>
         <th>Name</th>
         <th>Genre</th>
         <th>Price</th>
         <th>Release Date</th>
         <th></th>
     </thead>
+    <tbody>
+        @foreach(var game in games){
+            <tr>
+                <td>@game.Id</td>
+                <td>@game.Name</td>
+                <td>@game.Genre</td>
+                <td>@game.Price</td>
+                <td>@game.ReleaseDate</td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+
+@code {
+    private GameSummary[] games = [
+    new(){
+        Id = 1,
+        Name = "Fortnite",
+        Genre = "Shooter",
+        Price = 9.99M,
+        ReleaseDate = new DateOnly(2018,9,12)
+    },
+    new(){
+        Id = 2,
+        Name = "WWE Smackdown vs Raw",
+        Genre = "Sports",
+        Price = 69.99M,
+        ReleaseDate = new DateOnly(2024,3,3)
+    }   
+    ];
+}
