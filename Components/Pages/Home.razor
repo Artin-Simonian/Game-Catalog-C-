@@ -3,12 +3,12 @@
 
 <PageTitle>Game Cataog</PageTitle>
 
-<table>
-    <thead>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
         <th>Id</th>
         <th>Name</th>
         <th>Genre</th>
-        <th>Price</th>
+        <th class="text-end">Price</th>
         <th>Release Date</th>
         <th></th>
     </thead>
@@ -18,8 +18,9 @@
                 <td>@game.Id</td>
                 <td>@game.Name</td>
                 <td>@game.Genre</td>
-                <td>@game.Price</td>
+                <td  class="text-end">@game.Price.ToString("C2")</td>
                 <td>@game.ReleaseDate</td>
+                <td></td>
             </tr>
         }
     </tbody>
@@ -41,6 +42,20 @@
         Genre = "Sports",
         Price = 69.99M,
         ReleaseDate = new DateOnly(2024,3,3)
-    }   
+    },
+    new(){
+        Id = 3,
+        Name = "COD MW3",
+        Genre = "Shooter",
+        Price = 59.99M,
+        ReleaseDate = new DateOnly(2010, 5, 6)
+    },
+    new(){
+        Id = 4,
+        Name = "Forza Horizon 4",
+        Genre = "Racing",
+        Price = 45.99M,
+        ReleaseDate = new DateOnly(2023, 4, 22)
+    } 
     ];
 }
